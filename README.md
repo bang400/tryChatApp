@@ -1,16 +1,14 @@
 # try_chat_app
 
-A new Flutter project.
+チャットを学ぶ
 
-## Getting Started
+## 使う技術
 
-This project is a starting point for a Flutter application.
+・状態管理
+ Riverpod 
 
-A few resources to get you started if this is your first Flutter project:
+・ウィジェット構成
+ Stateless, Hook, Consumer
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+・パッケージ
+ flutter, flutter_hooks, flutter_riverpod, riverpod_annotation, build_runner, riverpod_generator
