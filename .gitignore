@@ -285,3 +285,6 @@ app.*.symbols
 
 # Exceptions to above rules.
 !/dev/ci/**/Gemfile.lock
+
+# Add
+.private
