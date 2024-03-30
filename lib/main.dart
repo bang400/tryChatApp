@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'pages/chat/view/chat_page.dart';
@@ -10,6 +11,8 @@ void main() async {
   const app = MyApp();
   const scope = ProviderScope(child: app);
 
+  // フレームワークとFlutterエンジンを結びつける接着剤のような役割をする
+  WidgetsFlutterBinding.ensureInitialized();
   // Firebase初期化処理
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -23,13 +26,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // firebaseユーザーのログイン状態を管理
+    final user = FirebaseAuth.instance.currentUser;
+
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, // キーボード出してから戻ると出るエラーに対処する
       theme: ThemeData(fontFamily: 'NotoSansJP'),
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Text('tryChatApp'),
-        ),        
+        ),
         // 初回インストール時、ログアウト時はホームページへ
         body: const HomePage(),
         // ログインしていたらチャットページへ

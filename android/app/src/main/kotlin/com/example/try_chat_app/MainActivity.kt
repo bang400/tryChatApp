@@ -1,4 +1,4 @@
-package com.example.try_chat_app
+package com.yamato.try_chat_app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:try_chat_app/model/auth/auth.dart';
+import 'package:try_chat_app/pages/auth/create_user_page.dart';
 
 // ログイン中→　チャットページへ
 // 初回インストール時、ログアウト時点→　ホームページへ
@@ -49,7 +51,11 @@ class HomePage extends StatelessWidget {
 
     // 新規登録ボタン
     final createButton = ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            return const CreateUserPage();
+          }));
+        },
         // style: ElevatedButton.styleFrom(minimumSize: const Size(200, double.infinity)),
         style: ElevatedButton.styleFrom(
             minimumSize: const Size(200, 50),
