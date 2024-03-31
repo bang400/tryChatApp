@@ -7,7 +7,7 @@ class Auth {
 
   Auth({FirebaseAuth? firebaseAuth}) : _auth = firebaseAuth ?? FirebaseAuth.instance;
 
-  Future<void> signInWithEmail(String email, String password) async {
+  Future<void> registerWithEmail(String email, String password) async {
     try {
       FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
