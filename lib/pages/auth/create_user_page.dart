@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:try_chat_app/pages/chat/view/chat_page.dart';
 
 import '../../model/auth/auth.dart';
 
@@ -70,7 +71,14 @@ class CreateUserPage extends HookWidget {
 
     // 新規ユーザー登録ボタン
     final registerButton = ElevatedButton(
-      onPressed: registerWithEmail,
+      onPressed: () async {
+        registerWithEmail;
+
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) {
+          return const ChatPage();
+        }), (route) => false);
+      },
       style: ElevatedButton.styleFrom(
           minimumSize: const Size(200, 50),
           shape:

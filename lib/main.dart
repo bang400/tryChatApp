@@ -38,9 +38,9 @@ class MyApp extends StatelessWidget {
           title: const Text('tryChatApp'),
         ),
         // 初回インストール時、ログアウト時はホームページへ
-        body: const HomePage(),
+        // body: const HomePage(),
         // ログインしていたらチャットページへ
-        // body: const ChatPage(),
+        body: const ChatPage(),
       ),
     );
   }
